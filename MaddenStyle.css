@@ -1,0 +1,37 @@
+body{
+    background-color: darkcyan;
+    color: darkred;
+}
+
+.Topic{
+    color: firebrick;
+}
+
+.Interest{
+    color: aqua;
+
+}
+
+.InterestTable{
+    background-color: azure;
+    color: blueviolet;
+}
+
+.DislikeTable{
+    background-color: cadetblue;
+    color: darkgreen;
+
+}
+
+.FamilyTable{
+
+}
+
+.button{
+    border: 1px solid black;
+    width: 10em;
+    padding: 0.25em;
+    margin: 0.25em;
+    border-radius: 10px;
+    background: darkmagenta;
+}
