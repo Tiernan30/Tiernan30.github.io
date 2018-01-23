@@ -1,5 +1,5 @@
 body{
-    background-color: darkcyan;
+    background-color: aquamarine;
     color: darkred;
 }
 
@@ -33,7 +33,7 @@ body{
     padding: 0.25em;
     margin: 0.25em;
     border-radius: 10px;
-    background: darkmagenta;
+    background: blueviolet;
 }
 .rotate90{
     -webkit-transform: rotate(270deg);
