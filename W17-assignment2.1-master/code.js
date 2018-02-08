@@ -58,7 +58,7 @@ function getMaxLineLength(txt){
     var lines = txt.split("\n");
     var maxLength = lines[0].length;
 
-    for(let i = 1; i < lines.length; i++){
+    for(var i = 1; i < lines.length; i++){
         if(lines[i].length > maxLength) {
             maxLength = lines[i].length;
         }
