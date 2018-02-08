@@ -81,7 +81,7 @@ function getPalindromes(txt){
 //function to return the 10 longest words in the string
 function getLongestWords(txt){
     var words = getWords(txt);
-    var longestWords = [];
+    var longestWordArray = [];
     var longestWordsLength = words[0].length;
 
     for(var i= 1; i <words.length; i++){
@@ -90,27 +90,27 @@ function getLongestWords(txt){
         }
     }
 
-    while(longestWordsLength > 0 && longestWords.length < 10){
+    while(longestWordsLength > 0 && longestWordArray.length < 10){
         for(var i = 0; i < words.length; i++){
-            if(words[i].length >= longestWordsLength && longestWords.indexOf(words[i].toLowerCase()) <= -1){
-                longestWords.push(words[i].toLowerCase());
+            if(words[i].length >= longestWordsLength && longestWordArray.indexOf(words[i].toLowerCase()) <= -1){
+                longestWordArray.push(words[i].toLowerCase());
             }
         }
         longestWordsLength--;
     }
 
-    longestWords.sort();
-    longestWords.reverse();
-    longestWords.sort(function(a,b){
+    longestWordArray.sort();
+    longestWordArray.reverse();
+    longestWordArray.sort(function(a,b){
         return b.length - a.length;
     });
 
 
-    while (longestWords.length > 10){
-        longestWords.pop();
+    while (longestWordArray.length > 10){
+        longestWordArray.pop();
     }
 
-    return longestWords;
+    return longestWordArray;
 }
 
 //function to return the 10most frequently occurring words in the string.
