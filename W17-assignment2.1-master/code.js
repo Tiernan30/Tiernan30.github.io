@@ -46,7 +46,7 @@ function getNonEmptyLines(txt){
 
 //function to return the average word length
 function getAvgWordLength(txt){
-    var words = txt.match(/[\w\d]+/gi);
+    var words = getWords(txt);
     var avgWord = 0;
     for(var i = 0; i < words.length; i++){
         avgWord += words[i].length;
@@ -70,7 +70,7 @@ function getMaxLineLength(txt){
 
 //function to return the palindromes found in text
 function getPalindromes(txt){
-    var words = txt.match(/[\w\d]+/gi);
+    var words = getWords(txt);
     var palindromes = [];
     for(var i = 0; i< words.length; i++){
         if(words[i].toLowerCase() === words[i].toLowerCase().split("").reverse().join("") && words[i].length >=2) {
@@ -82,7 +82,7 @@ function getPalindromes(txt){
 
 //function to return the 10 longest words in the string
 function getLongestWords(txt){
-    var words = txt.match(/[\w\d]+/gi);
+    var words = getWords(txt);
     var longestWords = [];
     var longestWordsLength = words[0].length;
 
@@ -115,7 +115,7 @@ function getLongestWords(txt){
 
 //function to return the 10most frequently occurring words in the string.
 function  getMostFrequentWords(txt){
-    var words = txt.match(/[\w\d]+/gi);
+    var words = getWords(txt);
     var wordCount = {};
     var result = [];
     var mostFrequent = 0;
