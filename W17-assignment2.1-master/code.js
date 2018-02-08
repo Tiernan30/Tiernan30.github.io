@@ -31,10 +31,10 @@ function getNonEmptyLines(txt){
 function getAvgWordLength(txt){
     var words = txt.match(/[\w\d]+/gi);
     var avgWord = 0;
-    for(var i = 0; i <words.length; i++){
+    for(var i = 0; i < words.length; i++){
         avgWord += words[i].length;
     }
-    var avgLength = avgWord / words;
+    var avgLength = avgWord / words.length;
     return avgLength;
 }
 
@@ -61,6 +61,11 @@ function getPalindromes(txt){
         }
     }
     return palindromes;
+}
+
+//function to return the 10 longest words in the string
+function getLongestWords(txt){
+
 }
 
 
