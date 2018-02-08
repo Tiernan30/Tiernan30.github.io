@@ -100,6 +100,7 @@ function getLongestWords(txt){
     }
 
     longestWords.sort();
+    longestWords.reverse();
     longestWords.sort(function(a,b){
         return b.length - a.length;
     });
