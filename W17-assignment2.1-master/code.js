@@ -96,7 +96,49 @@ function getLongestWords(txt){
     return longestWords;
 }
 
+//function to return the 10most frequently occurring words in the string.
+function  getMostFrequentWords(txt){
+    var words = txt.match(/[\w\d]+/gi);
+    var wordCount = {};
+    var result = [];
+    var mostFrequent = 0;
 
+    for(var i = 0; i < words.length; i++){
+        words[i] = words[i].toLowerCase();
+    }
+
+    words.sort();
+
+    for(var i = 0; i < words.length; i++){
+        if(!(words[i] in wordCount)){
+            wordCount[words[i]] = 1;
+        }else{
+            wordCount[words[i]]++;
+        }
+    }
+
+    for(var i = 0; i < words.length; i++){
+        if(wordCount[words[i]] > mostFrequent){
+            mostFrequent = wordCount[words[i]];
+        }
+    }
+
+    while(mostFrequent > 0 && result.length < 10){
+        for(var i = 0; i < words.length; i++){
+            if(wordCount[words[i]] === mostFrequent && result.indexOf(words[i] + "(" + wordCount[words[i]] + ")") <= -1){
+                result.push(words[i] + "(" + wordCount[words[i]] + ")");
+            }
+        }
+        mostFrequent--;
+    }
+
+    while(result.length > 10){
+        result.pop();
+    }
+
+    return result;
+
+}
 function getStats(txt) {
     return {
         nChars: getChars(txt),
@@ -107,7 +149,7 @@ function getStats(txt) {
         averageWordLength: getAvgWordLength(txt),
         palindromes: getPalindromes(txt),
         longestWords: getLongestWords(txt),
-        mostFrequentWords: ["hello(7)", "world(1)"]
+        mostFrequentWords: getMostFrequentWords(txt)
     };
 }
 
