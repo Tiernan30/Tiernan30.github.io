@@ -53,7 +53,14 @@ function getMaxLineLength(txt){
 }
 
 function getPalindromes(txt){
-    
+    var words = txt.match(/[\w\d]+/gi);
+    var palindromes = [];
+    for(var i = 0; i< words.length; i++){
+        if(words[i].toLowerCase() === words[i].toLowerCase().split("").reverse().join("") && words[i].length >=2) {
+            palindromes.push(words[i].toLowerCase());
+        }
+    }
+    return palindromes;
 }
 function getStats(txt) {
     return {
@@ -63,7 +70,7 @@ function getStats(txt) {
         nNonEmptyLines: getNonEmptyLines(txt),
         maxLineLength: getMaxLineLength(txt),
         averageWordLength: getAvgWordLength(txt),
-        palindromes: ["12321", "kayak", "mom"],
+        palindromes: getPalindromes(txt),
         longestWords: ["xxxxxxxxx", "123444444"],
         mostFrequentWords: ["hello(7)", "world(1)"]
     };
