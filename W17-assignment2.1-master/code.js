@@ -6,7 +6,7 @@ function getStats(txt) {
         nChars: txt.length,
         nWords: txt.trim().split(/\s+/).length,
         nLines: txt.split(/\r\n|\r|\n/).length,
-        nNonEmptyLines: 22,
+        nNonEmptyLines: (txt.match(/^\s*\S/gm) || "").length,
         averageWordLength: 3.3,
         maxLineLength: 33,
         palindromes: ["12321", "kayak", "mom"],
