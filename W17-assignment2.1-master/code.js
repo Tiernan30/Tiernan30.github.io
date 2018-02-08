@@ -15,16 +15,7 @@ function getWords(txt){
 
     txt = txt.trim()
 
-    txt = txt.replace(":-)", " ");
-    txt = txt.replace(/\n/g, " ");
-    txt = txt.replace(/\./g, " ");
-    txt = txt.replace(/\!/g, " ");
-    txt = txt.replace(/\?/g, " ");
-    txt = txt.replace(/\,/g, " ");
-    txt = txt.replace(/\+/g, " ");
-    txt = txt.replace(/\:/g, " ");
-    txt = txt.replace(/\"/g, " ");
-    txt = txt.replace(/\s+/g, " ");
+    txt = txt.replace(/[^a-z0-9]+|\s+/gmi, " ");
     var words = txt.split(" ");
 
     if(words[words.length-1] === ""){
