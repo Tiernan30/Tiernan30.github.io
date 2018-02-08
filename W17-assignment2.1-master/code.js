@@ -23,7 +23,7 @@ function getAvgWordLength(txt){
     var wordArray = [txt.split()];
     var avgWord = 0;
     for(var i = 0; i <words.length; i++){
-        avgWord += wordArray[i];
+        avgWord += wordArray[i]length;
     }
     var avgLength = avgWord / words;
     return avgLength;
