@@ -3,7 +3,7 @@
 //
 function getStats(txt) {
     return {
-        nChars: 123,
+        nChars: txt.length,
         nWords: 22,
         nLines: 10,
         nNonEmptyLines: 22,
