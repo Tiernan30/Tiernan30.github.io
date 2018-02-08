@@ -1,5 +1,5 @@
 //
-// Seng 513 - Assignment 2 
+// Seng 513 - Assignment 2
 // University of Calgary
 // W2018
 // Jared Madden
@@ -100,14 +100,12 @@ function getLongestWords(s){
     }
 
     //sorting by alphanumeric
-    longestWordArray.sort();
+    //longestWordArray.sort();
     //reversing sort as above seems to sort descending, still not right though.
-    longestWordArray.reverse();
+    //longestWordArray.reverse();
 
-    //sorting by length
-    longestWordArray.sort(function(a,b){
-        return b.length - a.length;
-    });
+    //sorting by length then alphabetically
+    longestWordArray.sort(function(a,b){return b.length - a.length || a.localeCompare(b);});
 
 
     while (longestWordArray.length > 10){
