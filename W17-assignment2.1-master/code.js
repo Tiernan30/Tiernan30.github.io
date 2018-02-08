@@ -20,12 +20,11 @@ function getNonEmptyLines(txt){
 
 function getAvgWordLength(txt){
     var words = getWords(txt);
-    var wordArray = [txt.split()];
     var avgWord = 0;
     for(var i = 0; i <words.length; i++){
-        avgWord += wordArray[i].length;
+        avgWord += words[i].length;
     }
-    var avgLength = avgWord / words;
+    var avgLength = avgWord / words.length;
     return avgLength;
 }
 function getStats(txt) {
