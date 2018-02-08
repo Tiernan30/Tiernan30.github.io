@@ -27,14 +27,27 @@ function getAvgWordLength(txt){
     var avgLength = avgWord / words.length;
     return avgLength;
 }
+
+function getMaxLineLength(txt){
+    var lines = txt.split("\n");
+    var maxLength = lines[0].length;
+
+    for(let i = 1; i < lines.length; i++){
+        if(lines[i].length > maxLength) {
+            maxLength = lines[i].length;
+        }
+    }
+    return maxLength;
+}
+
 function getStats(txt) {
     return {
         nChars: getChars(txt),
         nWords: getWords(txt),
         nLines: getLines(txt),
         nNonEmptyLines: getNonEmptyLines(txt),
+        maxLineLength: getMaxLineLength(txt),
         averageWordLength: getAvgWordLength(txt),
-        maxLineLength: 33,
         palindromes: ["12321", "kayak", "mom"],
         longestWords: ["xxxxxxxxx", "123444444"],
         mostFrequentWords: ["hello(7)", "world(1)"]
