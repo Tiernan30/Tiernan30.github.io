@@ -7,16 +7,16 @@
 //
 
 //function to return the number of characters
-function getChars(txt){
-    return txt.length;
+function getChars(s){
+    return s.length;
 }
 
-function getWords(txt){
+function getWords(s){
 
-    txt = txt.trim()
+    s = s.trim()
 
-    txt = txt.replace(/[^a-z0-9]+|\s+/gmi, " ");
-    var words = txt.split(" ");
+    s = s.replace(/[^a-z0-9]+|\s+/gmi, " ");
+    var words = s.split(" ");
 
     if(words[words.length-1] === ""){
         words.splice(words.length-1, 1);
@@ -27,24 +27,24 @@ function getWords(txt){
 }
 
 //function to return the number of words
-function getWordCount(txt){
-    var word = getWords(txt);
+function getWordCount(s){
+    var word = getWords(s);
     return word ? word.length : 0;
 }
 
 //function to return the number of lines
-function getLines(txt){
-    return txt.split(/\r\n|\r|\n/).length;
+function getLines(s){
+    return s.split(/\r\n|\r|\n/).length;
 }
 
 //function to return the number of non-empty lines
-function getNonEmptyLines(txt){
-    return (txt.match(/^\s*\S/gm) || "").length;
+function getNonEmptyLines(s){
+    return (s.match(/^\s*\S/gm) || "").length;
 }
 
 //function to return the average word length
-function getAvgWordLength(txt){
-    var words = getWords(txt);
+function getAvgWordLength(s){
+    var words = getWords(s);
     var avgWord = 0;
     for(var i = 0; i < words.length; i++){
         avgWord += words[i].length;
@@ -54,8 +54,8 @@ function getAvgWordLength(txt){
 }
 
 //function to return the length of the line that has the longest length
-function getMaxLineLength(txt){
-    var lines = txt.split("\n");
+function getMaxLineLength(s){
+    var lines = s.split("\n");
     var maxLength = lines[0].length;
 
     for(var i = 1; i < lines.length; i++){
@@ -67,8 +67,8 @@ function getMaxLineLength(txt){
 }
 
 //function to return the palindromes found in text
-function getPalindromes(txt){
-    var words = getWords(txt);
+function getPalindromes(s){
+    var words = getWords(s);
     var palindromes = [];
     for(var i = 0; i< words.length; i++){
         if(words[i].toLowerCase() === words[i].toLowerCase().split("").reverse().join("") && words[i].length >=2) {
@@ -79,8 +79,8 @@ function getPalindromes(txt){
 }
 
 //function to return the 10 longest words in the string
-function getLongestWords(txt){
-    var words = getWords(txt);
+function getLongestWords(s){
+    var words = getWords(s);
     var longestWordArray = [];
     var longestWordsLength = words[0].length;
 
@@ -114,8 +114,8 @@ function getLongestWords(txt){
 }
 
 //function to return the 10most frequently occurring words in the string.
-function  getMostFrequentWords(txt){
-    var words = getWords(txt);
+function  getMostFrequentWords(s){
+    var words = getWords(s);
     var counter = {};
     var result = [];
     var mostFrequent = 0;
