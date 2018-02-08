@@ -5,7 +5,7 @@ function getStats(txt) {
     return {
         nChars: txt.length,
         nWords: txt.split(' ','-').length,
-        nLines: txt.split("\r\n|\r|\n").length,
+        nLines: txt.trim().split(/\s+/).length,
         nNonEmptyLines: 22,
         averageWordLength: 3.3,
         maxLineLength: 33,
