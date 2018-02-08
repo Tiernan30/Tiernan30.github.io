@@ -30,10 +30,9 @@ function getNonEmptyLines(txt){
 //function to return the average word length
 function getAvgWordLength(txt){
     var words = txt.match(/[\w\d]+/gi);
-    var wordArray = txt.split(" ");
     var avgWord = 0;
     for(var i = 0; i <words.length; i++){
-        avgWord += wordArray[i].length;
+        avgWord += words[i].length;
     }
     var avgLength = avgWord / words;
     return avgLength;
@@ -52,6 +51,7 @@ function getMaxLineLength(txt){
     return maxLength;
 }
 
+//function to return the palindromes found in text
 function getPalindromes(txt){
     var words = txt.match(/[\w\d]+/gi);
     var palindromes = [];
@@ -62,6 +62,8 @@ function getPalindromes(txt){
     }
     return palindromes;
 }
+
+
 function getStats(txt) {
     return {
         nChars: getChars(txt),
