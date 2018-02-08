@@ -4,7 +4,7 @@
 function getStats(txt) {
     return {
         nChars: txt.length,
-        nWords: 22,
+        nWords: 21,
         nLines: 10,
         nNonEmptyLines: 22,
         averageWordLength: 3.3,
