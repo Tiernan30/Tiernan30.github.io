@@ -29,7 +29,7 @@ function getNonEmptyLines(txt){
 
 //function to return the average word length
 function getAvgWordLength(txt){
-    var words = getWords(txt);
+    var words = txt.match(/[\w\d]+/gi);
     var wordArray = txt.split(" ");
     var avgWord = 0;
     for(var i = 0; i <words.length; i++){
