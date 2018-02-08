@@ -99,11 +99,6 @@ function getLongestWords(s){
         longestWordsLength--;
     }
 
-    //sorting by alphanumeric
-    //longestWordArray.sort();
-    //reversing sort as above seems to sort descending, still not right though.
-    //longestWordArray.reverse();
-
     //sorting by length then alphabetically
     longestWordArray.sort(function(a,b){return b.length - a.length || a.localeCompare(b);});
 
