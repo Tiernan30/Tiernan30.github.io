@@ -65,7 +65,35 @@ function getPalindromes(txt){
 
 //function to return the 10 longest words in the string
 function getLongestWords(txt){
+    var words = txt.match(/[\w\d]+/gi);
+    var longestWords = [];
+    var longestWordsLength = words[0].length;
 
+    for(var i= 1; i <words.length; i++){
+        if(words[i].length > longestWordsLength){
+            longestWordsLength = words[i].length;
+        }
+    }
+
+    while(longestWordsLength > 0 && longestWords.length < 10){
+        for(var i = 0; i < words.length; i++){
+            if(words[i].length >= longestWordsLength && longestWords.indexOf(words[i].toLowerCase()) <= -1){
+                longestWords.push(words[i].toLowerCase());
+            }
+        }
+        longestWordsLength--;
+    }
+
+    longestWords.sort();
+    longestWords.sort(function(a,b){
+        return b.length - a.length;
+    });
+
+    while (longestWords.length > 10){
+        longestWords.pop();
+    }
+
+    return longestWords;
 }
 
 
@@ -78,7 +106,7 @@ function getStats(txt) {
         maxLineLength: getMaxLineLength(txt),
         averageWordLength: getAvgWordLength(txt),
         palindromes: getPalindromes(txt),
-        longestWords: ["xxxxxxxxx", "123444444"],
+        longestWords: getLongestWords(txt),
         mostFrequentWords: ["hello(7)", "world(1)"]
     };
 }
