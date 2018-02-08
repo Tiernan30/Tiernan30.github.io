@@ -1,23 +1,33 @@
 //
-// this is just a stub for a function you need to implement
+// Seng 513 - Assignment
+// University of Calgary
+// W2018
+// Jared Madden
+// ID: 30008241
 //
+
+//function to return the number of characters
 function getChars(txt){
     return txt.length;
 }
 
+//function to return the number of words
 function getWords(txt){
     var word = txt.match(/[\w\d]+/gi);
     return word ? word.length : 0;
 }
 
+//function to return the number of lines
 function getLines(txt){
     return txt.split(/\r\n|\r|\n/).length;
 }
 
+//function to return the number of non-empty lines
 function getNonEmptyLines(txt){
     return (txt.match(/^\s*\S/gm) || "").length;
 }
 
+//function to return the average word length
 function getAvgWordLength(txt){
     var words = getWords(txt);
     var wordArray = txt.split(" ");
@@ -29,6 +39,7 @@ function getAvgWordLength(txt){
     return avgLength;
 }
 
+//function to return the length of the line that has the longest length
 function getMaxLineLength(txt){
     var lines = txt.split("\n");
     var maxLength = lines[0].length;
@@ -41,6 +52,9 @@ function getMaxLineLength(txt){
     return maxLength;
 }
 
+function getPalindromes(txt){
+    
+}
 function getStats(txt) {
     return {
         nChars: getChars(txt),
