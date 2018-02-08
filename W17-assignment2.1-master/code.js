@@ -116,7 +116,7 @@ function getLongestWords(txt){
 //function to return the 10most frequently occurring words in the string.
 function  getMostFrequentWords(txt){
     var words = getWords(txt);
-    var wordCount = {};
+    var counter = {};
     var result = [];
     var mostFrequent = 0;
 
@@ -127,23 +127,23 @@ function  getMostFrequentWords(txt){
     words.sort();
 
     for(var i = 0; i < words.length; i++){
-        if(!(words[i] in wordCount)){
-            wordCount[words[i]] = 1;
+        if(!(words[i] in counter)){
+            counter[words[i]] = 1;
         }else{
-            wordCount[words[i]]++;
+            counter[words[i]]++;
         }
     }
 
     for(var i = 0; i < words.length; i++){
-        if(wordCount[words[i]] > mostFrequent){
-            mostFrequent = wordCount[words[i]];
+        if(counter[words[i]] > mostFrequent){
+            mostFrequent = counter[words[i]];
         }
     }
 
     while(mostFrequent > 0 && result.length < 10){
         for(var i = 0; i < words.length; i++){
-            if(wordCount[words[i]] === mostFrequent && result.indexOf(words[i] + "(" + wordCount[words[i]] + ")") <= -1){
-                result.push(words[i] + "(" + wordCount[words[i]] + ")");
+            if(counter[words[i]] === mostFrequent && result.indexOf(words[i] + "(" + counter[words[i]] + ")") <= -1){
+                result.push(words[i] + "(" + counter[words[i]] + ")");
             }
         }
         mostFrequent--;
