@@ -11,9 +11,26 @@ function getChars(txt){
     return txt.length;
 }
 
-//function to return the number of words
 function getWords(txt){
-    var word = txt.match(/[\w\d]+/gi);
+
+    txt = txt.trim()
+
+    txt = txt.replace(":-)", " ");
+    txt = txt.replace(/\n | \. | \! | \? | \, | \+ | \: | \"/g, " ");
+    txt = txt.replace(/\s+/g, " ");
+    var words = txt.split(" ");
+
+    if(words[words.length-1] === ""){
+        words.splice(words.length-1, 1);
+    }
+
+    return words;
+
+}
+
+//function to return the number of words
+function getWordCount(txt){
+    var word = getWords(txt);
     return word ? word.length : 0;
 }
 
@@ -142,7 +159,7 @@ function  getMostFrequentWords(txt){
 function getStats(txt) {
     return {
         nChars: getChars(txt),
-        nWords: getWords(txt),
+        nWords: getWordCount(txt),
         nLines: getLines(txt),
         nNonEmptyLines: getNonEmptyLines(txt),
         maxLineLength: getMaxLineLength(txt),
